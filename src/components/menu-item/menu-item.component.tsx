@@ -1,11 +1,13 @@
 import React, { FunctionComponent } from 'react';
-import {Section} from '../../types/section-types'
-import './menu-item.styles.scss'
+import {Section} from '../../types/section-types';
+import {withRouter} from 'react-router-dom';
+import './menu-item.styles.scss';
+import {RouteComponentProps} from 'react-router'
 
 
 
-const MenuItem: FunctionComponent<Section> = ({imageUrl, size, title}) =>(
-    <div className={`${size} menu-item`}>
+const MenuItem: FunctionComponent<Section & RouteComponentProps> = ({imageUrl, size, title, linkUrl, history, match}) =>(
+    <div className={`${size} menu-item`} onClick={()=>history.push(`${match.url}${linkUrl}`)}>
         <div className='background-image' style={{
             backgroundImage: `url(${imageUrl})`
         }}></div>
@@ -16,4 +18,4 @@ const MenuItem: FunctionComponent<Section> = ({imageUrl, size, title}) =>(
     </div>
 )
 
-export default MenuItem
+export default withRouter(MenuItem)
