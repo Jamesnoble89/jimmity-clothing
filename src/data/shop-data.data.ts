@@ -1,6 +1,6 @@
 import {StoreCategory} from '../types/product-types'
 
-export const categories: StoreCategory[] = [
+export const CATEGORIES: StoreCategory[] = [
     {
       id: 1,
       title: 'Hats',

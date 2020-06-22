@@ -1,14 +1,12 @@
-import { Interface } from "readline";
-
 export interface StoreItem{
-    id: number,
+    id?: number,
     name: string,
     imageUrl: string,
     price: number
 }
 
 export interface StoreCategory{
-    id: number,
+    id?: number,
     title: string,
     routeName: string,
     items: StoreItem[]
